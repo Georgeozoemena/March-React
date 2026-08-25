@@ -1,17 +1,46 @@
-function Navbar(props) {
-  console.log(props);
-  return (
-    <h1
-      style={{
-        backgroundColor: "#121212",
-        color: "#fff",
-      }}
+// function Navbar({name, age, bio}) {
+//   return (
+//     <>
+//      <h1>{name}</h1>
+//      <p>{age}</p>
+//      <p>{bio}</p>
+//     </>
+//   );
+// }
 
-      className={props.className}
-    >
-      {props.name}
-    </h1>
+import { NavLink } from "react-router-dom";
+
+const Navbar = () => {
+  return (
+    <>
+      <nav>
+        <NavLink
+          className={({isActive}) => isActive ? "nav-link-active" : "nav-link"}
+          to="/dashboard"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          className={({isActive}) =>  isActive ? "nav-link-active" : "nav-link" }
+          to="/dashboard/about"
+        >
+          About
+        </NavLink>
+        <NavLink
+          className={({isActive}) => isActive ? "nav-link-active" : "nav-link" }
+          to="/dashboard/contact"
+        >
+          Contact
+        </NavLink>
+        <NavLink
+          className={({isActive}) =>  isActive ? "nav-link-active" : "nav-link"}
+          to="/dashboard/mission"
+        >
+          Mission
+        </NavLink>
+      </nav>
+    </>
   );
-}
+};
 
 export default Navbar;
