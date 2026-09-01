@@ -10,6 +10,8 @@ import Contact from "./pages/landing/Contact";
 import DashBoardLayout from "./pages/dashboard/DashboardLayout";
 import Login from "./pages/Login";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import Products from "./components/Product";
+
 
 function App() {
   // const [cart, setCart] = useState(0)
@@ -47,6 +49,7 @@ function App() {
           </Route>
         </Route>
         <Route path="/login" element={<Login />} />
+        <Route path="/products/:id" element={<Products />} />
         <Route path="*" element={<h1>404, page not found</h1>} />
       </Routes>
     </>
